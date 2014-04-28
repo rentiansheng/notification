@@ -1,0 +1,110 @@
+<html>
+<head>
+<script src="notify.js"></script>
+<script>
+    function support() {
+        if(window.Notifier.HasSupport()) {
+            alert("你的浏览器支持桌面通知功能！");
+        } else {
+            alert("你的浏览器不支持桌面通知同能，请你使用chrome浏览器！");
+        }
+
+    }
+    
+    function isGetPermission() {
+        if(window.Notifier.IsGetPermission()) {
+            alert("网站已经获取浏览器允许发送桌面通知权限！");
+        } else {
+            alert("需要获取浏览器允许发送桌面通知权限 ！");
+        }
+    }
+
+    function disable(){
+        if(window.Notifier.Disable()) {
+            alert("网站被禁止发送桌面通知！");
+        } else {
+            alert("未被禁止发送桌面通知 ！");
+        }
+    }
+
+    function requestPermission(){
+        window.Notifier.RequestPermission();
+        alert("已经发送请求，在可以获取权限的情况下会显示获取权限提示！");
+    }
+    
+    var i = 0;
+    function notify() {
+        Notifier.Notify("", "通知"+i, "内容" + i++);
+    }
+
+    function fall() {
+        var obj = document.getElementById("model");
+        obj.innerHTML = "<strong>显示所有通知</strong>，但是chrome最多会在屏幕上显示三个，其他处于隐藏状态";
+        Notifier.ModelAll();
+    }
+
+    function update() {
+        var obj = document.getElementById("model");
+        obj.innerHTML = "<strong>更新模式</strong>，在上个通知位置显示本次通知";
+        Notifier.ModelUpdate();
+    }
+
+    function count() {
+        var obj = document.getElementById("model");
+        obj.innerHTML = "<strong>限制个数模式</strong>，默认是三个，你可以同ModelCount参数改变的，现在为2个";
+        Notifier.ModelCount(2);
+    }
+
+    function timeout() {
+        var obj = document.getElementById("model");
+        obj.innerHTML = "<strong>超过时间消失</strong>，现在设置5秒，";
+        Notifier.ModelTimeout(2);
+    }
+
+    
+    function  closePre() {
+        Notifier.ClosePre();
+    }
+
+    function  closeLast() {
+        Notifier.CloseLast();
+    }
+
+
+
+
+    function closeAll() {
+        Notifier.CloseAll();
+    }
+</script>
+
+</script>
+</head>
+<body>
+<div>
+    <p>准备操作</p>
+    <button onclick="support()"> 检查是否支持桌面通知功能</button>
+    <button onclick="isGetPermission()"> 是否可以显示桌面通知</button>
+    <button onclick="disable()">是否禁用本网站的显示桌面通知</button>
+    <button onclick="requestPermission()"> 尝试获取发送桌面通知权限 </button>
+</div>
+<div>
+    <p/>
+    <div id="model">显示所有通知，但是chrome最多会在屏幕上显示三个，其他处于隐藏状态</div>
+    <button onclick="notify()">发送通知</button>
+</div>
+<div>
+    <p>显示通知模式</p>
+    <button onclick="fall()">显示所有通知</button>
+    <button onclick="update()">更新通知</button>
+    <button onclick="count()">限制个数</button>
+    <button onclick="timeout()">过期自动关闭</button>
+</div>
+<div>
+    <p>关闭模式</p>
+    <button onclick="closePre()">关闭前一个</button>
+    <button onclick="closeLast()">关闭最早的</button>
+    <button onclick = "closeAll()">关闭所有</button>
+</div>
+</body>
+</html>
