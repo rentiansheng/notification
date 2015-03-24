@@ -75,6 +75,5 @@ chrome 浏览器桌面通知
     Notifier.Disable();         //是否禁用通知
     ```
 
-## 更多
-本扩展由小声团队开发 http://xiaosheng.fm
+
 
