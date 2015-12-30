@@ -62,7 +62,7 @@ chrome 浏览器桌面通知
 4. 关闭的方法
     
     ```HTML
-     Notifier.Clse(type);    //type=1 关闭上一个 其他值 关闭最早打开的
+     Notifier.Close(type);    //type=1 关闭上一个 其他值 关闭最早打开的
      Notifier.ClosePre();    //关闭最近个打开的通知
      Notifier.CloseLast();   //关闭最早显示的通知
      NOtifier.CloseAll();    //关闭所有通知
