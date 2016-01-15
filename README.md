@@ -2,7 +2,7 @@ chrome 浏览器桌面通知
 =========
 
 ##
-谷歌关闭了 Win/Mac 的 Chrome 通知中心功能(2016-01)
+谷歌关闭了 Win/Mac 的 Chrome 通知中心功能(2016-01)  大家可以使用Notification
 
 ## 简介
 
