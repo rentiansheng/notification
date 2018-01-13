@@ -159,10 +159,10 @@
         return n;
 
       }else if (undefined !== window.Notification && _notifier.name ===  window.Notification.name)  {
-
         return  new _notifier(title, {icon:icon, body: body});
       } else {
         console.log('error not found notification!')
+        alert(title +"\n\n"+body);
         return undefined;
       }
     }
