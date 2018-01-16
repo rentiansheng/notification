@@ -170,6 +170,7 @@ Directly open the test page directly in the browser, can not send notification, 
     `` `HTML
     Notifier.Notify (icon, title, message); // Show desktop notification, icon: Address of the image title: Title of the notification message: Content of the notification
     `` `
+    
 5. Close the method
     
     `` `HTML
@@ -181,7 +182,8 @@ Directly open the test page directly in the browser, can not send notification, 
      
      NOtifier.CloseAll (); // Close all notifications
      `` `
-5. Other ways
+     
+6. Other ways
     
     `` `HTML
     Notifier.GetPermission (); // Get notification on the use of permissions, 0, has been given permission 1, need to obtain permission 2, prohibit the use of
