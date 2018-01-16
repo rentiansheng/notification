@@ -1,5 +1,5 @@
-##chrome 浏览器桌面通知
-=========
+## chrome 浏览器桌面通知
+
 
 ##
 
@@ -98,7 +98,6 @@
 
 
 ## chrome browser desktop notification
-=========
 
 ##
 
@@ -110,9 +109,9 @@ Still displayed in the lower right corner of the screen, you can immediately see
 
 ## dependent
 
-P1. PC chrome browser
-22. Mobile phone dolphin browser
-33. firefox but smart to display a notification (not recommended, there are differences between different versions)
+1. PC chrome browser
+2. Mobile phone dolphin browser
+3. firefox but smart to display a notification (not recommended, there are differences between different versions)
 
 
 ## Precautions
@@ -122,7 +121,7 @@ Notification of permissions is based on the site (or domain name), the same site
 If the other in the same domain name in the page is disabled. Will not be notified, nor can I get permission again.
 Can view the permissions with the browser's menu.
 ```HTML
-Settings - "privacy settings under the" content settings "-" notice
+Settings -> content settings -> notice
 ```
 If you close or refresh the page. Before the notice can not control.
 
@@ -136,17 +135,16 @@ Directly open the test page directly in the browser, can not send notification, 
 
 1. reference notify.js file
 
-    ```HTML
-    <script src = "notifiy.js"> </ script>
-    ```
+    ```HTML
+    <script src="notifiy.js"></script>
+    ```
 
 2. Browser configuration
 
     Check whether the browser supports desktop notification feature
-    
-    ```HTML
-    Notifier.HasSupport ();
-    ```
+    ```HTML
+    Notifier.HasSupport();
+    ```
 
     Get allowed desktop notification
     ```HTML
