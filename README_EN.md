@@ -1,7 +1,4 @@
-# English doc
-
-
-
+[中文文档](README.md)
 ## chrome browser desktop notification
 
 ##
@@ -44,57 +41,58 @@ Directly open the test page directly in the browser, can not send notification, 
     <script src="notifiy.js"></script>
  ```
 
-2. Browser configuration
+2. Browser configuration. Check whether the browser supports desktop notification feature
 
-    Check whether the browser supports desktop notification feature
 ```HTML
     Notifier.HasSupport();
 ```
 
-    Get allowed desktop notification
+3. Get allowed desktop notification
+ 
 ```HTML
-    Notifier.RequestPermission ();
+    Notifier.RequestPermission ();
 ```
 
 
-3. Set the notification display (optional. Do not set the default mode)
-    
+4. Set the notification display (optional. Do not set the default mode)
+
 ```HTML
-     Notifier.ModelAll (); // default mode, showing all. In linux generally three. The window is displayed in the notification area.
+    Notifier.ModelAll (); // default mode, showing all. In linux generally three. The window is displayed in the notification area.
      
-     Notifier.ModelUpdate (); // Update mode, displayed at the last notification location,
+    Notifier.ModelUpdate (); // Update mode, displayed at the last notification location,
      
-     Notifier.ModelCount (c); / / limit the number of notifications displayed on the current page, the default is three (you can change the number of parameters c). Close the earliest notice when exceeding the limit,
+    Notifier.ModelCount (c); / / limit the number of notifications displayed on the current page, the default is three (you can change the number of parameters c). Close the earliest notice when exceeding the limit,
      
-     NOtifier.ModelTimeout (ct); // Timeout disappear mode. Display a certain time automatically disappear.
+    Notifier.ModelTimeout (ct); // Timeout disappear mode. Display a certain time automatically disappear.
 ```
 
-4. Send notification
+5. Send notification
 
 ```HTML
-    Notifier.Notify (icon, title, message); // Show desktop notification, icon: Address of the image title: Title of the notification message: Content of the notification
+    Notifier.Notify (icon, title, message); // Show desktop notification, icon: Address of the image title: Title of the notification message: Content of the notification
+    Notifier.Notify (icon, title, message, fnClick); // Show desktop notification, icon: Address of the image title: Title of the notification message: Content of the notification
 ```
     
-5. Close the method
-    
+6. Close the method
+
 ```HTML
-     Notifier.Close (type); // type = 1 Close previous value Close the earliest open
+    Notifier.Close (type); // type = 1 Close previous value Close the earliest open
      
-     Notifier.ClosePre (); // Close the most recently opened notification
+    Notifier.ClosePre (); // Close the most recently opened notification
      
-     Notifier.CloseLast (); // Turn off the earliest displayed notification
+    Notifier.CloseLast (); // Turn off the earliest displayed notification
      
-     NOtifier.CloseAll (); // Close all notifications
+    Notifier.CloseAll (); // Close all notifications
 ```
      
-6. Other ways
-    
+7. Other ways
+
 ```HTML
-    Notifier.GetPermission (); // Get notification on the use of permissions, 0, has been given permission 1, need to obtain permission 2, prohibit the use of
+    Notifier.GetPermission (); // Get notification on the use of permissions, 0, has been given permission 1, need to obtain permission 2, prohibit the use of
     
-    Notifier.IsGetPermission (); / / Has access to the notification been obtained
+    Notifier.IsGetPermission (); / / Has access to the notification been obtained
     
-    Notifier.Disable (); // Whether to disable the notification
+    Notifier.Disable (); // Whether to disable the notification
 ```
 
 

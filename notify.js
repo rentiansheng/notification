@@ -1,17 +1,17 @@
 (function(window){
  /**
-  * @brief Notifier 
+  * @brief Notifier
   *
   * @param type 1. 一直提示 2，更新提示内容  3， 控制显示上限。超过个数删除最早的  4，超时更新
   * @param param  本参数在type为3，4时才有效， type为3表示可以最多显示通知的个数  4， 表示多少秒后删除了
   *
-  * @return 
+  * @return
   */
     function Notifier() {};
 
 
     window.Notifier = Notifier;
-      
+
 
     type = 1;
     queue = [];
@@ -104,9 +104,8 @@
     }
 
 
-    window.Notifier.Notify = function(icon, title, body) {
+    window.Notifier.Notify = function(icon, title, body, fnClick) {
       if (this.IsGetPermission() == 0) {
-
 
         var popup = _createNotificationAndShow(icon, title, body);
         if(undefined == popup) {
@@ -140,13 +139,17 @@
         };
 
 
-        popup.onclick = function(){};
+        popup.onclick = function() {
+            if ( fnClick != undefined && typeof fnClick == "function") {
+                fnClick()
+            }
+        };
 
         queue.push(popup);
         return true;
       } else {
 		    RequestPermission();
-		
+
 	    }
 
       return false;
